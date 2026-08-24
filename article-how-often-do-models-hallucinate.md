@@ -1,7 +1,5 @@
 # We tested a frontier model against 873 source-verified facts. Here's exactly where it lies.
 
-*A methodology write-up from [Groundtruth](https://groundtruthdata.dev) — cross-postable to GitHub, dev.to, Hacker News, LinkedIn, or anywhere else that takes a straight technical account over marketing copy.*
-
 ## The setup
 
 Hallucination rate isn't one number. It's not even close to one number. We wanted to know, concretely, when a frontier model can be trusted to answer from its own knowledge and when it can't — so we built 17 small, source-verified datasets across law, medicine, finance, science, math, code, history, and government records, and used them as an eval.
