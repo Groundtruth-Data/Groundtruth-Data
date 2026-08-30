@@ -1,3 +1,5 @@
+> **Historical benchmark snapshot.** This article documents an earlier Groundtruth Data multi-domain evaluation run. The product catalog and newer, larger proof evaluations at [groundtruthdata.dev](https://groundtruthdata.dev) should take precedence where results differ. In particular, later source-aware work showed that citation weaknesses were concentrated in OpenAlex metadata grounding rather than a blanket citation-graph failure.
+
 # We tested a frontier model against 873 source-verified facts. Here's exactly where it lies.
 
 ## The setup
@@ -53,9 +55,7 @@ The 10.1% average hides the real story:
 | UK Companies House records | 55 | 1.8% |
 | Historical events/dates/figures | 34 | **0.0%** |
 
-Citation graphs are the clear outlier — nearly a third of answers confidently wrong. This makes mechanical sense: a model has no way to actually check whether paper A cites paper B and what it says without tools. It falls back on plausible-sounding completion, and plausible-sounding is exactly what a citation hallucination looks like until someone checks.
-
-History is the opposite extreme — zero hallucinations across 34 graded rows. Well-documented, heavily-repeated historical facts appear to be reliably internalized.
+Citation graphs were the clear outlier in this earlier run. Later, larger source-aware evaluation narrowed that interpretation: the strongest demonstrated citation weakness was OpenAlex metadata grounding, especially open-access status, while citation-edge and direction tasks performed much better.
 
 ## The interesting middle: honest hedging
 
@@ -63,19 +63,14 @@ Two domains stand out for a different reason. UK Companies House records hedged 
 
 ## Why this matters beyond one benchmark run
 
-This isn't a one-time stunt test. It's the same grading layer that ships inside every dataset in the catalog — every purchased row includes the exact question asked, the model's actual response, and the verdict, so the claim is auditable row by row rather than taken on faith. The numbers above will drift slightly as the catalog is audited and expanded further; they're a snapshot of a live, ongoing measurement, not a static marketing claim.
+This isn't a one-time stunt test. It's the same grading layer that ships inside every dataset in the catalog — every purchased row includes the exact question asked, the model's actual response, and the verdict, so the claim is auditable row by row rather than taken on faith. The numbers above are a historical snapshot of this specific run, not a universal model-performance claim.
 
 ## Run it yourself
 
-A 100-row free sample (10% of the full set) is published as [`groundtruth-hallucination-bench-sample`](https://huggingface.co/datasets/groundtruth-data/groundtruth-hallucination-bench-sample) on Hugging Face, along with a small runner script that works against Anthropic, OpenAI-compatible endpoints, or literally any model/CLI you can pipe a prompt into:
+A 100-row free sample is published as [`groundtruth-hallucination-bench-sample`](https://huggingface.co/datasets/Groundtruth-Data/groundtruth-hallucination-bench-sample) on Hugging Face.
 
-```bash
-curl -O https://groundtruthdata.dev/eval-runner.mjs
-ANTHROPIC_API_KEY=... node eval-runner.mjs groundtruth-sample.jsonl
-```
-
-Full methodology, per-row sourcing, and the complete 17-dataset / 918-case catalog: [groundtruthdata.dev](https://groundtruthdata.dev)
+Current methodology, product families, and larger proof/remediation/held-out offerings: [groundtruthdata.dev](https://groundtruthdata.dev)
 
 ---
 
-*Corrections welcome — if you find a row you believe is wrong, that's exactly the kind of scrutiny this was built to survive. Open an issue or reach out via the site.*
+*Corrections welcome — if you find a row you believe is wrong, that's exactly the kind of scrutiny this was built to survive.*
