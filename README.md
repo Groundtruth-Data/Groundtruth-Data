@@ -45,7 +45,7 @@ No model-improvement claim is made from the existence of remediation data alone.
 
 ## Public benchmark sample
 
-A 100-row public sample is available on Hugging Face:
+A 180-row public sample is available on Hugging Face:
 
 **[Groundtruth Data Hallucination Benchmark Sample](https://huggingface.co/datasets/Groundtruth-Data/groundtruth-hallucination-bench-sample)**
 
@@ -89,16 +89,18 @@ Proof, remediation, and held-out sets are kept separate to prevent leakage.
 
 ## Public sample schema
 
-Rows in the public sample include fields such as:
+Rows in the public sample include:
 
 - `id`
 - `dataset`
 - `domain`
 - `question`
-- `expected_answer`
-- `grading_context`
+- `verified_answer`
+- `verification_summary`
 - `source_urls`
 - `reference_model`
+- `model_response`
+- `verdict`
 - `grading_mode`
 - `difficulty`
 - `tags`
