@@ -20,7 +20,7 @@ We also build **custom model failure studies** for teams that need a new capabil
 
 Authoritative source family: NLM / RxNav / MED-RT.
 
-Available assets include a proof evaluation, validated remediation data, and held-out validation data.
+Available assets include a 500-case proof evaluation, 10,000 validated remediation rows, and a separate held-out validation set. These assets are not the same as the smaller public diagnostic sample.
 
 ### FDA Label Grounding
 
@@ -50,6 +50,14 @@ A 180-row public sample is available on Hugging Face:
 **[Groundtruth Data Hallucination Benchmark Sample](https://huggingface.co/datasets/Groundtruth-Data/groundtruth-hallucination-bench-sample)**
 
 The sample spans research citations, clinical trials, FDA safety data, code execution and package behavior, Companies House records, SEC filings, legal facts, math, science, history, geography, government data, and cross-source verification.
+
+### Try the public sample in three steps
+
+1. Give the model only the value in the `question` field. Keep `verified_answer`, `verification_summary`, source URLs, and prior model responses out of the model context.
+2. Save the exact response with the model name, model version, run date, and whether retrieval was enabled.
+3. Review the response against the acceptable reference and provenance. Treat a non-match as review-required until synonyms, scope, and source timing have been checked.
+
+The public sample is for inspecting the schema and running a quick diagnostic. It is not an untouched held-out set and should not be used to claim post-training improvement.
 
 ## Verification methodology
 
