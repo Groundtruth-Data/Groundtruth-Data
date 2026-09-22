@@ -20,13 +20,13 @@ We also build **custom model failure studies** for teams that need a new capabil
 
 Authoritative source family: NLM / RxNav / MED-RT.
 
-Available assets include a 500-case proof evaluation, 10,000 validated remediation rows, and a separate held-out validation set. These assets are not the same as the smaller public diagnostic sample.
+Locally validated assets include a 500-case proof evaluation, 10,000 remediation rows, and a separate 1,000-row held-out validation set. Commercial delivery is pending publication and checkout acceptance; these are not automatically downloadable purchases today. These assets are not the same as the smaller public diagnostic sample.
 
 ### FDA Label Grounding
 
 Authoritative source family: openFDA.
 
-A completed 1,000-row proof evaluation identified a repeatable label-grounding error pattern. Validated 10k remediation and 1k held-out assets are available.
+A completed 1,000-row proof evaluation identified a repeatable label-grounding error pattern. The 10k remediation and 1k held-out assets are validated locally and pending publication.
 
 ### Citation / OpenAlex Metadata Grounding
 
@@ -34,7 +34,7 @@ Authoritative source: OpenAlex.
 
 A completed 1,000-row source-aware proof evaluation produced 869/1,000 correct (86.9%) and 131/1,000 incorrect (13.1%). The strongest demonstrated weakness was **OpenAlex open-access metadata grounding**; this should not be interpreted as a blanket citation-graph failure.
 
-Validated assets include:
+Locally validated assets, pending commercial publication, include:
 
 - 1,000-row proof evaluation
 - 10,000-row remediation dataset
@@ -113,13 +113,13 @@ Rows in the public sample include:
 - `difficulty`
 - `tags`
 
-The sample is intentionally small and does not contain the full commercial proof, remediation, or held-out datasets.
+The sample is intentionally small and does not contain the full commercial proof, remediation, or held-out datasets. The `samples/` directory contains a quick-start guide linking to Hugging Face; it does not contain a second copy of the 180-row data.
 
 ## Commercial datasets
 
 See the catalog and methodology at **https://groundtruthdata.dev**.
 
-Available offerings include:
+Product families include (commercial scope and delivery must be confirmed):
 
 - verified evaluation datasets
 - proof evaluations
@@ -144,3 +144,7 @@ That article is a historical snapshot of an earlier multi-domain run. Newer, lar
 
 **Groundtruth Data**  
 https://groundtruthdata.dev
+
+## Questions and commercial inquiries
+
+[Discuss a dataset or pilot](https://groundtruthdata.dev/custom). No model-improvement or live Runtime service is promised.
