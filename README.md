@@ -20,9 +20,9 @@ We also build **custom model failure studies** for teams that need a new capabil
 
 Authoritative source family: NLM / RxNav / MED-RT.
 
-**[500-case Proof Evaluation — $999 · test checkout](https://groundtruthdata.dev/checkout?product=drug-indication-proof-500&src=github)**
+**[Buy the 500-case Proof Evaluation — $999](https://groundtruthdata.dev/checkout?product=drug-indication-proof-500&src=github)**
 
-The 500 unique proof cases are packaged with JSONL, provenance, historical grades, a hash manifest, and an internal-use license. Test payment and automatic delivery have been verified. Checkout remains test-only: no real customer charges are accepted yet. This is a historical source-grounding evaluation, not a clinical recommendation or independently blinded holdout.
+The 500 unique proof cases are packaged with JSONL, provenance, historical grades, a hash manifest, and an internal-use license. Automatic delivery was verified with completed test payments. Live checkout is now enabled; payment is followed by a private download and delivery email. This is a historical source-grounding evaluation, not a clinical recommendation or independently blinded holdout.
 
 The 10,000 remediation rows and separate 1,000-row held-out validation set remain locally validated and pending commercial publication. These assets are distinct from the smaller public diagnostic sample.
 
