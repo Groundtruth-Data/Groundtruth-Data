@@ -20,6 +20,10 @@ We also build **custom model failure studies** for teams that need a new capabil
 
 Authoritative source family: NLM / RxNav / MED-RT.
 
+**[Try the free 25-case starter (ZIP)](https://groundtruthdata.dev/samples/drug-indication-starter.zip)**
+
+Use Node.js 22 or newer. Give your model only the questions in `prompts.jsonl`, then copy its responses into `outputs.jsonl` using the supplied template. Run `node run.mjs grade outputs.jsonl report.json` to compare responses with the historical references. A mismatch calls for review. The ZIP includes source dates and the grading instructions. [Read the walkthrough](https://groundtruthdata.dev/docs).
+
 **[Buy the 500-case Proof Evaluation — $999](https://groundtruthdata.dev/checkout?product=drug-indication-proof-500&src=github)**
 
 The 500 unique proof cases are packaged with JSONL, provenance, historical grades, a hash manifest, and an internal-use license. Automatic delivery was verified with completed test payments. Live checkout is now enabled; payment is followed by a private download and delivery email. This is a historical source-grounding evaluation, not a clinical recommendation or independently blinded holdout.
