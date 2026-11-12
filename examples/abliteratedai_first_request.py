@@ -14,13 +14,21 @@ MODEL = 'abliterated-235b-a22b-fp8'
 WARMING = {'provider_warming', 'session_starting'}
 
 
+def request_payload(prompt):
+    return {
+        'model': MODEL,
+        'messages': [{'role': 'user', 'content': prompt}],
+        'max_tokens': 128,
+        'stream': False,
+    }
+
+
 def first_request(key, prompt, wait_budget=600, *, opener=urllib.request.urlopen,
                   sleep=time.sleep, clock=time.monotonic):
     """Retry only explicit, pre-admission warming responses; never unknown failures."""
     deadline = clock() + wait_budget
     request_id = str(uuid.uuid4())
-    body = json.dumps({'model': MODEL, 'messages': [{'role': 'user', 'content': prompt}],
-                       'max_tokens': 128, 'stream': False}).encode()
+    body = json.dumps(request_payload(prompt)).encode()
     while True:
         request = urllib.request.Request(ENDPOINT, data=body, method='POST', headers={
             'Authorization': 'Bearer ' + key, 'Content-Type': 'application/json',
@@ -67,7 +75,7 @@ def main():
         parser.error('--wait-budget must be between 0 and 1800')
     if not args.send:
         print('Dry run: no network request, no charge. Endpoint: ' + ENDPOINT)
-        print('Model: ' + MODEL + '; max output: 128 tokens; streaming: disabled.')
+        print(json.dumps(request_payload(args.prompt), indent=2, ensure_ascii=False))
         print('After checking account rates and access, set ABLITERATED_API_KEY and add --send.')
         return 0
     key = os.environ.get('ABLITERATED_API_KEY', '').strip()
