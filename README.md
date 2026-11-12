@@ -30,6 +30,30 @@ The 500 unique proof cases are packaged with JSONL, provenance, historical grade
 
 The 10,000 remediation rows and separate 1,000-row held-out validation set remain locally validated and pending commercial publication. These assets are distinct from the smaller public diagnostic sample.
 
+#### Preview a request with AbliteratedAI
+
+To try one historical evaluation prompt with an OpenAI-compatible client, download and extract the starter ZIP above. From the extracted folder, run this Python 3 snippet. It prints a request locally so you can inspect exactly what the model would see. It needs no API key, network request or credits.
+
+```sh
+python3 - <<'PY'
+import json
+from pathlib import Path
+
+with Path("prompts.jsonl").open(encoding="utf-8") as prompts:
+    case = json.loads(next(prompts))
+
+request = {
+    "model": "abliterated-235b-a22b-fp8",
+    "messages": [{"role": "user", "content": case["question"]}],
+    "stream": False,
+    "max_tokens": 128,
+}
+print(json.dumps(request, indent=2))
+PY
+```
+
+To run it on a funded account, follow the [AbliteratedAI quickstart](https://abliteratedai.dev/docs/quickstart?utm_source=github&utm_medium=referral&utm_campaign=nov15_sprint&utm_content=groundtruth_example) for access and authentication. A live generation can incur usage charges. Pair the text from `choices[0].message.content` with the original case ID in the starter's `outputs-template.jsonl`. Keep the reference answers out of the request.
+
 ### FDA Label Grounding
 
 Authoritative source family: openFDA.
