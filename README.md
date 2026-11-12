@@ -52,9 +52,14 @@ print(json.dumps(request, indent=2))
 PY
 ```
 
-For a runnable Python client, [download the first-request example](https://raw.githubusercontent.com/Groundtruth-Data/Groundtruth-Data/main/examples/abliteratedai_first_request.py). Run `python3 abliteratedai_first_request.py` for the free offline check. The example sends a request only when you supply `--send` and an API key.
+To use the same question in the [downloadable Python client](https://raw.githubusercontent.com/Groundtruth-Data/Groundtruth-Data/main/examples/abliteratedai_first_request.py), save the file beside `prompts.jsonl`. From that directory, run:
 
-To run it on a funded account, follow the [AbliteratedAI quickstart](https://abliteratedai.dev/docs/quickstart?utm_source=github&utm_medium=referral&utm_campaign=nov15_sprint&utm_content=groundtruth_example) for access and authentication. A live generation can incur usage charges. Pair the text from `choices[0].message.content` with the original case ID in the starter's `outputs-template.jsonl`. Keep the reference answers out of the request.
+```sh
+prompt=$(python3 -c 'import json; print(json.loads(next(open("prompts.jsonl", encoding="utf-8")))["question"])') &&
+python3 abliteratedai_first_request.py --prompt "$prompt"
+```
+
+This command runs offline. For a live request, [create an AbliteratedAI account](https://abliteratedai.dev/register?utm_source=github&utm_medium=referral&utm_campaign=nov15_sprint&utm_content=starter_signup), verify your email, and request API access. Follow the [quickstart](https://abliteratedai.dev/docs/quickstart?utm_source=github&utm_medium=referral&utm_campaign=nov15_sprint&utm_content=groundtruth_example) to set up a project key and review current pricing. On a funded account, adding `--send` to the Python client command sends this question and can incur usage charges. The client prints the answer first, then a separate line with request and usage details. Copy only the answer into the matching case's `answer` field in your output file. Keep the reference answers out of the request.
 
 ### FDA Label Grounding
 
