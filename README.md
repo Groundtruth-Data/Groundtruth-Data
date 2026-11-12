@@ -59,7 +59,11 @@ prompt=$(python3 -c 'import json; print(json.loads(next(open("prompts.jsonl", en
 python3 abliteratedai_first_request.py --prompt "$prompt"
 ```
 
-This command runs offline. For a live request, [create an AbliteratedAI account](https://abliteratedai.dev/register?utm_source=github&utm_medium=referral&utm_campaign=nov15_sprint&utm_content=starter_signup), verify your email, and request API access. Follow the [quickstart](https://abliteratedai.dev/docs/quickstart?utm_source=github&utm_medium=referral&utm_campaign=nov15_sprint&utm_content=groundtruth_example) to set up a project key and review current pricing. On a funded account, adding `--send` to the Python client command sends this question and can incur usage charges. The client prints the answer first, then a separate line with request and usage details. Copy only the answer into the matching case's `answer` field in your output file. Keep the reference answers out of the request.
+This command runs offline. For a live request, [create an AbliteratedAI account](https://abliteratedai.dev/register?utm_source=github&utm_medium=referral&utm_campaign=nov15_sprint&utm_content=starter_signup), verify your email, and request API access. Follow the [quickstart](https://abliteratedai.dev/docs/quickstart?utm_source=github&utm_medium=referral&utm_campaign=nov15_sprint&utm_content=groundtruth_example) to set up a project key.
+
+Before you fund an account, check the [session and token prices](https://abliteratedai.dev/#pricing). On November 12, 2026, the smallest credit purchase was $10 and the listed 10-minute session was $3 with 15,000 output tokens included. You can run the offline preview above without buying credits.
+
+On a funded account, adding `--send` to the Python client command sends this question and can incur usage charges. The client prints the answer first, then a separate line with request and usage details. Copy only the answer into the matching case's `answer` field in your output file. Keep the reference answers out of the request.
 
 ### FDA Label Grounding
 
