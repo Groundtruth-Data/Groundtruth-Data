@@ -32,6 +32,8 @@ The 10,000 remediation rows and separate 1,000-row held-out validation set remai
 
 #### Preview a request with AbliteratedAI
 
+[Open the free browser notebook in Colab](https://colab.research.google.com/github/Groundtruth-Data/Groundtruth-Data/blob/main/examples/abliteratedai_quickstart.ipynb) to edit a prompt and inspect a chat request without installing Python or buying credits. The second cell shows how to read the answer from a sample response.
+
 To try one historical evaluation prompt with an OpenAI-compatible client, download and extract the starter ZIP above. From the extracted folder, run this Python 3 snippet. It prints a request locally so you can inspect exactly what the model would see. It needs no API key, network request or credits.
 
 ```sh
