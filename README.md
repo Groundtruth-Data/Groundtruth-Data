@@ -71,7 +71,7 @@ Both clients run offline by default. For a live request, [create an AbliteratedA
 
 Before you fund an account, check the [session and token prices](https://abliteratedai.dev/#pricing). On November 12, 2026, the smallest credit purchase was $10 and the listed 10-minute session was $3 with 15,000 output tokens included. You can run the offline preview above without buying credits.
 
-On a funded account, adding `--send` to the Python client command sends this question and can incur usage charges. The client prints the answer first, then a separate line with request and usage details. Copy only the answer into the matching case's `answer` field in your output file. Keep the reference answers out of the request.
+On a funded account, adding `--send` to either client makes a live request and can incur usage charges. Each client prints the answer first, then a separate line with request and usage details. Copy only the answer into the matching case's `answer` field in your output file. Keep the reference answers out of the request.
 
 ### FDA Label Grounding
 
