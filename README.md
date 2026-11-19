@@ -67,6 +67,14 @@ Node.js 22 users can use the matching [single-file JavaScript client](https://ra
 node abliteratedai_first_request.mjs --prompt "Summarize the source passage in one sentence."
 ```
 
+#### Get an AbliteratedAI API key
+
+1. [Create an AbliteratedAI account](https://abliteratedai.dev/register?utm_source=github&utm_medium=referral&utm_campaign=nov15_sprint&utm_content=api_key_signup) and verify your email.
+2. Follow the [quickstart](https://abliteratedai.dev/docs/quickstart?utm_source=github&utm_medium=referral&utm_campaign=nov15_sprint&utm_content=api_key_quickstart) to request API access and create a project key.
+3. Save the key in your shell as `ABLITERATED_API_KEY`; never commit it to source control.
+
+Creating an account and previewing either client is free. A live request requires `--send` and may use paid credits, so check the current account rates and access first.
+
 Both clients run offline by default. For a live request, [create an AbliteratedAI account](https://abliteratedai.dev/register?utm_source=github&utm_medium=referral&utm_campaign=nov15_sprint&utm_content=starter_signup), verify your email, and request API access. Follow the [quickstart](https://abliteratedai.dev/docs/quickstart?utm_source=github&utm_medium=referral&utm_campaign=nov15_sprint&utm_content=groundtruth_example) to set up a project key.
 
 Before you fund an account, check the [session and token prices](https://abliteratedai.dev/#pricing). On November 12, 2026, the smallest credit purchase was $10 and the listed 10-minute session was $3 with 15,000 output tokens included. You can run the offline preview above without buying credits.
